@@ -93,28 +93,6 @@ const Index = () => {
           </Card>
         </div>
       </section>
-      
-      <section className="py-16 bg-cyber-light/30">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center gradient-text">Team CyberSafeguard</h2>
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <h3 className="text-xl font-medium mb-4">Team Members</h3>
-              <ul className="list-disc pl-5 space-y-2">
-                <li><span className="font-semibold">Keshav Rajput</span> – 2401010222</li>
-                <li>[Other team members]</li>
-              </ul>
-              
-              <div className="mt-8">
-                <h3 className="text-xl font-medium mb-4">Problem Statement</h3>
-                <p className="text-lg italic text-cyber-dark font-medium">
-                  "Why are cyber frauds on the rise despite the rapid expansion of secure digital payment systems like UPI in India?"
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
