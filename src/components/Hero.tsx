@@ -6,6 +6,15 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
     <div className="relative overflow-hidden bg-cyber-dark py-20">
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-20" 
+        style={{ 
+          backgroundImage: "url('/cybersecurity-digital-payment.jpg')", 
+          backgroundBlendMode: "overlay" 
+        }}
+      ></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-cyber-dark via-cyber-dark/90 to-cyber-dark/80"></div>
       <div className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(circle_at_top_right,#9b87f5,transparent_70%)]"></div>
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
