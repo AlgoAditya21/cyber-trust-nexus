@@ -6,12 +6,17 @@ import { useEffect, useState } from "react";
 
 export function Hero() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [keyboardImageLoaded, setKeyboardImageLoaded] = useState(false);
   
   useEffect(() => {
-    // Preload the image to ensure smooth animation
-    const img = new Image();
-    img.src = '/cybersecurity-digital-payment.jpg';
-    img.onload = () => setImageLoaded(true);
+    // Preload the images to ensure smooth animation
+    const backgroundImg = new Image();
+    backgroundImg.src = '/cybersecurity-digital-payment.jpg';
+    backgroundImg.onload = () => setImageLoaded(true);
+    
+    const keyboardImg = new Image();
+    keyboardImg.src = '/lovable-uploads/70aa2561-24a4-4f97-92c1-de5dda619bf9.png';
+    keyboardImg.onload = () => setKeyboardImageLoaded(true);
   }, []);
 
   return (
@@ -24,6 +29,21 @@ export function Hero() {
           backgroundBlendMode: "overlay" 
         }}
       ></div>
+      
+      {/* Cyber fraud keyboard image with animation */}
+      <div 
+        className={`absolute right-0 bottom-0 md:right-10 md:bottom-10 w-full md:w-1/3 max-w-md h-auto z-10 transition-all duration-1000 transform ${
+          keyboardImageLoaded ? 'translate-y-0 opacity-30 md:opacity-60' : 'translate-y-20 opacity-0'
+        }`}
+      >
+        <img 
+          src="/lovable-uploads/70aa2561-24a4-4f97-92c1-de5dda619bf9.png" 
+          alt="Cyber Fraud Keyboard" 
+          className="w-full h-auto rounded-lg shadow-2xl animate-pulse" 
+          style={{animationDuration: '3s'}}
+        />
+      </div>
+      
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-cyber-dark via-cyber-dark/90 to-cyber-dark/80"></div>
       <div className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(circle_at_top_right,#9b87f5,transparent_70%)]"></div>
       
@@ -33,9 +53,13 @@ export function Hero() {
         <div className="absolute top-3/4 left-1/3 w-3 h-3 rounded-full bg-cyber-accent/20 animate-pulse" style={{animationDelay: '1s'}}></div>
         <div className="absolute top-1/3 right-1/4 w-2 h-2 rounded-full bg-cyber-primary/30 animate-pulse" style={{animationDelay: '1.5s'}}></div>
         <div className="absolute bottom-1/4 right-1/3 w-2 h-2 rounded-full bg-cyber-accent/20 animate-pulse" style={{animationDelay: '0.7s'}}></div>
+        
+        {/* New particles with red theme to match the cyber fraud key */}
+        <div className="absolute top-2/4 left-1/5 w-2 h-2 rounded-full bg-red-500/30 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-3 h-3 rounded-full bg-red-500/20 animate-pulse" style={{animationDelay: '1.2s'}}></div>
       </div>
       
-      <div className="container relative z-10">
+      <div className="container relative z-20">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
             Why are cyber frauds rising despite secure payment systems?
